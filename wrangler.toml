@@ -1,0 +1,12 @@
+name = "nirbhoy-proxy"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+[vars]
+ALLOWED_ORIGINS = "http://localhost:3000,https://admin.nirbhoy.de,https://app.nirbhoy.de,https://doctor.nirbhoy.de"
+RATE_LIMIT_PER_MIN = "100"
+
+# Secrets (set via: wrangler secret put <NAME>)
+# - SUPABASE_URL
+# - SUPABASE_ANON_KEY  
+# - SUPABASE_SERVICE_KEY
