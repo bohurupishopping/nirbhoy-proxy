@@ -12,8 +12,16 @@ RATE_LIMIT_PER_MIN = "100"
 # - SUPABASE_SERVICE_KEY
 
 [observability]
-[observability.logs]
 enabled = false
 head_sampling_rate = 1
-invocation_logs = true
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
 persist = true
+invocation_logs = true
+
+[observability.traces]
+enabled = false
+persist = true
+head_sampling_rate = 1
