@@ -39,11 +39,18 @@ function getCorsHeaders(request: Request, env: Env): Record<string, string> {
 
     const headers: Record<string, string> = {
         "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization, apikey, x-client-info",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization, apikey, x-client-info, Prefer, Range, Accept-Profile, Content-Profile",
+        "Access-Control-Expose-Headers": "Content-Range, Range",
         "Access-Control-Max-Age": "86400",
     };
 
-    if (allowedOrigins.includes(origin) || allowedOrigins.includes("*")) {
+    // Check exact match or localhost subdomain pattern
+    const isLocalhost = origin.match(/^http:\/\/(\w+\.)?localhost:\d+$/);
+    const isAllowed = allowedOrigins.includes(origin) ||
+        allowedOrigins.includes("*") ||
+        (isLocalhost && allowedOrigins.some(o => o.includes("localhost")));
+
+    if (isAllowed) {
         headers["Access-Control-Allow-Origin"] = origin;
         headers["Access-Control-Allow-Credentials"] = "true";
     }
