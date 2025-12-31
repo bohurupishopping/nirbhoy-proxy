@@ -1,6 +1,6 @@
 name = "nirbhoy-proxy"
 main = "src/index.ts"
-compatibility_date = "2024-12-01"
+compatibility_date = "2025-12-01"
 
 [vars]
 ALLOWED_ORIGINS = "http://localhost:3000,https://admin.nirbhoy.de,https://app.nirbhoy.de,https://doctor.nirbhoy.de"
@@ -10,3 +10,10 @@ RATE_LIMIT_PER_MIN = "100"
 # - SUPABASE_URL
 # - SUPABASE_ANON_KEY  
 # - SUPABASE_SERVICE_KEY
+
+[observability]
+[observability.logs]
+enabled = false
+head_sampling_rate = 1
+invocation_logs = true
+persist = true
