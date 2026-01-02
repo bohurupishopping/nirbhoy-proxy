@@ -3,7 +3,7 @@ main = "src/index.ts"
 compatibility_date = "2025-12-01"
 
 [vars]
-ALLOWED_ORIGINS = "http://localhost:3000,http://admin.localhost:3000,http://app.localhost:3000,http://doctor.localhost:3000,https://admin.nirbhoy.de,https://app.nirbhoy.de,https://doctor.nirbhoy.de"
+ALLOWED_ORIGINS = "http://localhost:3000,http://admin.localhost:3000,http://app.localhost:3000,http://doctor.localhost:3000,https://admin.nirbhoy.de,https://app.nirbhoy.de,https://doctor.nirbhoy.de,https://nirbhoy.de,https://www.nirbhoy.de"
 RATE_LIMIT_PER_MIN = "100"
 
 # Secrets (set via: wrangler secret put <NAME>)
