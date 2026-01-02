@@ -39,7 +39,7 @@ function getCorsHeaders(request: Request, env: Env): Record<string, string> {
 
     const headers: Record<string, string> = {
         "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization, apikey, x-client-info, Prefer, Range, Accept-Profile, Content-Profile",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization, apikey, x-client-info, Prefer, Range, Accept-Profile, Content-Profile, x-supabase-api-version",
         "Access-Control-Expose-Headers": "Content-Range, Range",
         "Access-Control-Max-Age": "86400",
     };
